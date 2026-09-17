@@ -3,11 +3,16 @@
 Console.WriteLine("Hello, World!");
 
 
-MiArreglo oMyArreglo = new(10000);
+MiArreglo oMyArreglo = new(10);
 
-oMyArreglo.Llenar(5, 50);
+oMyArreglo.Llenar(1, 100);
 
 //oMyArreglo.ToString();
-
+Console.WriteLine("/nArreglo desordenado ");
 Console.WriteLine(oMyArreglo);
+
+Console.WriteLine("/nArreglo ordenado");
+oMyArreglo.Ordenar();
+Console.WriteLine(oMyArreglo);
+
 Console.ReadKey();
