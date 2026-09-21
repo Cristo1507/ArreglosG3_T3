@@ -35,16 +35,33 @@ namespace Arreglos.Logica
             }
             _tope = N;
         }
-        //Metodo ordenar burbuja
+        //Metodo ordenar (burbuja)
         public void Ordenar()
+        {
+            Ordenar(true);
+        }
+
+        public void Ordenar(bool ascendente)
         {
             for(int i=0; i<_tope; i++)
             { 
               for(int j = i+1; j < _tope; j++)
                 {
-                    if (_arreglo[i] > _arreglo[j])
+                    if (ascendente)
                     {
-                        Cambiar(ref _arreglo[i],ref _arreglo[j]);
+
+
+                        if (_arreglo[i] > _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
+                    }
+                    else
+                    {
+                        if (_arreglo[i] < _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
                     }
                 }
 

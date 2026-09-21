@@ -11,8 +11,12 @@ oMyArreglo.Llenar(1, 100);
 Console.WriteLine("/nArreglo desordenado ");
 Console.WriteLine(oMyArreglo);
 
-Console.WriteLine("/nArreglo ordenado");
+Console.WriteLine("/nArreglo ordenado ascendente");
 oMyArreglo.Ordenar();
+Console.WriteLine(oMyArreglo);
+
+Console.WriteLine("/nArreglo ordenado descendente");
+oMyArreglo.Ordenar(false);
 Console.WriteLine(oMyArreglo);
 
 Console.ReadKey();
