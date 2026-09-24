@@ -77,6 +77,66 @@ namespace Arreglos.Logica
             b = auxiliar;
 
         }
+
+        //Metodo agregar
+        public void Agregar(int numero)
+        {
+            if (Estalleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            _arreglo[_tope] = numero;
+            _tope++;
+
+        }
+
+        //Metodo insertar
+        public void Insertar (int numero, int posicion)
+        {
+            if (Estalleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for(int i= _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+            }
+
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
+        //Metodo Eliminar
+        public void Eliminar(int posicion)
+        {
+            if (Estavacio)
+            {
+                throw new Exception("El arreglo esta vacio");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = posicion; i < _tope-1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+            _tope--;
+
+        }
+
         //Metodo ToString
         public override string ToString()
         {
